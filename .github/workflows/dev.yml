@@ -16,7 +16,7 @@ jobs:
         run: npm install
       - name: Build
         working-directory: ./functions
-        run: npm run build
+        run: npm run build-prod
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
