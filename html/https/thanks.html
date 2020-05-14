@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>サンクスページ</title>
+</head>
+
+<body>
+    <div>お買い上げありがとうございました。</div>
+    <div>購入商品</div>
+    <div><img src="./product1.png" width="100">
+        <ul>
+            <li>商品ID: 12345</li>
+            <li>購入合計金額: 66,000円</li>
+            <li>取引コード: 1</li>
+            <li>購入商品合計数: 2</li>
+        </ul>
+    </div>
+
+    <div>
+        <a href="./">トップページへ戻る</a>
+    </div>
+    <script type='text/javascript'>
+        let transaction_code = Math.ceil(Math.random() * 100000000).toString();
+        var data = {
+            product_ids: ['12345'],
+            total_price: 66000,
+            transaction_code: transaction_code,
+            quantity: 2
+        }
+    </script>
+</body>
+
+</html>
