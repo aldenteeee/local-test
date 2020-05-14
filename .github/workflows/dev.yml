@@ -9,6 +9,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - name: GitHub Action for Firebase
+        uses: w9jds/firebase-action@v1.3.0
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
@@ -20,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Build
         working-directory: ./functions
-        run: npm run build
+        run: npm run build-prod
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
