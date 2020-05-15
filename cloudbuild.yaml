@@ -1,9 +1,12 @@
-steps:
-  - id: 'Install npm packages'
-    dir: 'functions'
-    name: 'node:12.9-buster'
-    args: ['npm', 'install']
-  - id: "Deploy to Firebase"
-    name: 'gcr.io/local-22c4a/firebase'
-    args: ['deploy']
-    
+  steps:
+      - name: node:10.15.1
+        entrypoint: npm
+        args: [ 'install' ]
+      - name: node:10.15.1
+        entrypoint: npm
+        args: [ 'test' ]
+      - name: node:10.15.1
+        entrypoint: npm
+        args: [ 'run', 'build.prod' ]
+      - name: 'gcr.io/dev-alpha/firebase'
+        args: [ 'deploy', '-P', 'js-demo-fe-staging']
