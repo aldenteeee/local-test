@@ -1,8 +1,10 @@
   steps:
       - name: node:10.15.1
+        dir: functions
         entrypoint: npm
         args: [ 'install' ]
       - name: node:10.15.1
+        dir: functions
         entrypoint: npm
         args: [ 'test' ]
       - name: node:10.15.1
