@@ -3,8 +3,7 @@
         args: ['install']
       - name: 'gcr.io/cloud-builders/docker'
         args: ['build', '-t', 'gcr.io/dev-alpha/firebase', '.']
-      images:
-        - 'gcr.io/dev-alpha/firebase'
+      images: 'gcr.io/dev-alpha/firebase'
       - name: node:10.15.1
         dir: functions
         entrypoint: npm
