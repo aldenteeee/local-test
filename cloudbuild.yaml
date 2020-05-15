@@ -6,7 +6,8 @@ steps:
   - id: 'Build App'
     name: 'node:12.9-buster'
     dir: 'functions'
-    args: ['npm', 'run', 'serve']
+    args: ['npm', 'run', 'build']
   - id: "Deploy to Firebase"
-    name: 'gcr.io/dev-alpha/firebase'
+    name: 'gcr.io/local-22c4a/firebase'
     args: ['deploy']
+    
