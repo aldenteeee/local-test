@@ -8,6 +8,7 @@
         entrypoint: npm
         args: [ 'test' ]
       - name: node:10.15.1
+        dir: functions
         entrypoint: npm
         args: [ 'run', 'build.prod' ]
       - name: 'gcr.io/dev-alpha/firebase'
