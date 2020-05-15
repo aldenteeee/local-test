@@ -1,7 +1,12 @@
 steps:
   - id: 'Install npm packages'
+    dir: 'functions'
     name: 'node:12.9-buster'
     args: ['npm', 'install']
+  - id: 'Build App'
+    name: 'node:12.9-buster'
+    dir: 'functions'
+    args: ['npm', 'run', 'serve']
   - id: "Deploy to Firebase"
     name: 'gcr.io/dev-alpha/firebase'
     args: ['deploy']
