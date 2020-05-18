@@ -2,8 +2,8 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
+    "build": "mkdir -p dist && ./node_modules/.bin/babel ./*.js --out-file ./dist/index.js",
     "serve": "firebase emulators:start --only functions",
-    "build": "tsc",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
