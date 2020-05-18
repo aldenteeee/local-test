@@ -25,4 +25,3 @@ jobs:
           args: deploy
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
-          PROJECT_ID: "local-22c4a"
