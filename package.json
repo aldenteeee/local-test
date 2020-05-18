@@ -4,6 +4,7 @@
   "description": "",
   "main": "html/https/index.html",
   "devDependencies": {
+    "firebase-functions": "^3.6.1",
     "firebase-tools": "^8.2.0"
   }
 }
