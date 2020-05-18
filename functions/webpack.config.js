@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
     // エントリーポイントの設定
+    target: 'node',
     entry: './index.js',
     // ビルド後、'./dist/my-bundle.js'というbundleファイルを生成する
     output: {
