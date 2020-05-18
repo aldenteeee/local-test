@@ -12,6 +12,7 @@ jobs:
         uses: actions/checkout@master
       - name: Install Dependencies
         run: npm ci
+      - name: Install Dependencies2
         working-directory: functions
         run: npm ci
       - name: Archive Production Artifact
