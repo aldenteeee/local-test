@@ -4,23 +4,6 @@ on:
     branches:
       - test-branch
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-      - name: Install Dependencies
-        working-directory: functions
-        run: npm ci
-      - name: Build
-        working-directory: functions
-        run: npm run build
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: dist
-          path: functions/public
   deploy:
     name: Deploy
     needs: build
@@ -28,11 +11,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-      - name: Download Artifact
-        uses: actions/download-artifact@master
-        with:
-          name: dist
-          path: functions/public
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
