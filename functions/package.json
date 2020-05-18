@@ -2,7 +2,7 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
-    "build": "mkdir -p dist && ./node_modules/.bin/babel ./*.js --out-file ./dist/index.js",
+    "build": "mkdir -p dist",
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
