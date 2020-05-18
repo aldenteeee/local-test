@@ -11,10 +11,10 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        working_directory: functions
+        working-directory: functions
         run: npm ci
       - name: Build
-        working_directory: functions
+        working-directory: functions
         run: npm run build -- --mode staging
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
