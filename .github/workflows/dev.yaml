@@ -20,7 +20,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: dist
-          path: functions/dist
+          path: functions/dist/index.js
   deploy:
     name: Deploy
     needs: build
