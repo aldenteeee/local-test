@@ -11,7 +11,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        working-directory: functions
+        working-directory: html/https
         run: npm ci
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
