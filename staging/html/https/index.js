@@ -5,8 +5,8 @@ const path = require('path');
 
 const app = express();
 app.all('/*', basicAuth(function(user, password) {
-  return user === '' && password === '';
+  return user === 'abc' && password === 'abc';
 }));
-app.use(express.static(path.resolve(__dirname, '../html/https/')));
+app.use(express.static('src/'));
 
 exports.app = functions.https.onRequest(app);
