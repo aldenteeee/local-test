@@ -7,7 +7,7 @@ const app = express();
 app.all('/*', basicAuth(function(user, password) {
   return user === '' && password === '';
 }));
-app.use(express.static('./src/'));
+app.use(express.static('./html/https/'));
 
 exports.app = functions.https.onRequest(app);
 
