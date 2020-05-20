@@ -16,9 +16,9 @@ jobs:
         working-directory: staging/html/https
         run: npm ci
       - name: Deploy to Firebase
-        working-directory: staging
         uses: w9jds/firebase-action@master
         with:
+          working-directory: staging
           args: deploy
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
