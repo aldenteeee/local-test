@@ -1,6 +1,8 @@
 name: Build and Deploy
 on:
   push:
+    paths:
+      - 'staging/**'
     branches:
       - test-branch
 jobs:
@@ -11,7 +13,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        working-directory: html/https
+        working-directory: staging/html/https
         run: npm ci
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
