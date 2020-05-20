@@ -1,0 +1,13 @@
+  - name: Checkout Repo
+    uses: actions/checkout@master
+  - name: Use staging repo
+    uses: ./staging
+  - name: Install Dependencies
+    working-directory: ./html/https
+    run: npm ci
+  - name: Deploy to Firebase
+    uses: w9jds/firebase-action@master
+    with:
+      args: deploy
+    env:
+      GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
