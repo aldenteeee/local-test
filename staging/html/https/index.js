@@ -10,3 +10,5 @@ app.all('/*', basicAuth(function(user, password) {
 app.use(express.static('./src/'));
 
 exports.app = functions.https.onRequest(app);
+
+//test
