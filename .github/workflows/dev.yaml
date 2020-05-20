@@ -9,7 +9,6 @@ jobs:
   deploy:
     name: Build
     runs-on: ubuntu-latest
-    repository: ./staging
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
