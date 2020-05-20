@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: copy staging repo
-        run: mv ./staging/firebase.json ./staging/.firebaserc ./
+        run: mv ./staging/* ./staging/.firebaserc ./
       - name: Install Dependencies
         run: npm ci
       - name: Deploy to Firebase
