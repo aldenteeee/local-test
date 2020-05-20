@@ -21,4 +21,4 @@ jobs:
         with:
           args: 'deploy'
         env:
-          GCP_SA_KEY: ${{ secrets.STAGING_GCP_SA_KEY }}
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
