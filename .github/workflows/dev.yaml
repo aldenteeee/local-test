@@ -5,6 +5,9 @@ on:
       - 'staging/**'
     branches:
       - test-branch
+defaults:
+  run:
+    working-directory: staging
 jobs:
   deploy:
     name: Build
@@ -13,12 +16,11 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        working-directory: staging/html/https
+        working-directory: html/https
         run: npm ci
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          working-directory: staging
           args: deploy
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
