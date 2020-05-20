@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@master
       - name: copy firebase.json
         working-directory: ./staging
-        run: mv firebase.json .firebasrc ../
+        run: mv firebase.json .firebaserc ../
       - name: Install Dependencies
         working-directory: ./staging/html/https
         run: npm ci
