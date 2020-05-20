@@ -12,12 +12,13 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+      - name: copy staging repo
+        run: mv ./staging/* ./staging/.firebaserc ./
       - name: Install Dependencies
-        working-directory: staging/html/https
         run: npm ci
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy
+          args: 'deploy'
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
