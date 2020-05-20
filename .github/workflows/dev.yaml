@@ -9,6 +9,7 @@ jobs:
   deploy:
     name: Build
     runs-on: ubuntu-latest
+    repository: ./staging
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
@@ -18,7 +19,7 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          working-directory: ./staging
-          args: deploy
+          working-directory: './staging'
+          args: 'deploy'
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
